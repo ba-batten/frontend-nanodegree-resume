@@ -10,7 +10,7 @@ var bio = {
     'github': 'ba-batten',
     'location': 'Durham, NC'
   },
-  'welcomeMsg': '',
+  'welcomeMsg': 'Hi, I am a front-end web developer and I would love to put my skills to work for YOU!',
   'skills': [
     'HTML',
     'CSS',
