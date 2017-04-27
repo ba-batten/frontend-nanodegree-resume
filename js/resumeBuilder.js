@@ -106,13 +106,17 @@ var projects = {
 //=======================================================================================================================
 
 // Add bio.name and bio.role
-var formattedName, formattedRole;
+var formattedName, formattedRole, formattedBioPic, formattedWelcomeMsg;
 
 formattedName = HTMLheaderName.replace('%data%', bio.name);
 formattedRole = HTMLheaderRole.replace('%data%', bio.role);
+formattedBioPic = HTMLbioPic.replace('%data%', bio.biopic);
+formattedWelcomeMsg = HTMLwelcomeMsg.replace('%data%', bio.welcomeMsg);
 
+$('#header').prepend(formattedBioPic);
 $('#header').prepend(formattedRole);
 $('#header').prepend(formattedName);
+$('#header').append(formattedWelcomeMsg);
 
 // Populate topContacts with info from bio.contacts
 var formattedMobile, formattedEmail, formattedGithub, formattLocation;
