@@ -19,7 +19,7 @@ bio = {
     'Java'
   ],
   'biopic': '',
-  
+  'display': function(){};
 };
 
 education = {
@@ -48,33 +48,43 @@ education = {
       'dates': '2005- 2008',
       'url': 'http://www.uncw.edu/'
     }
-  ]
+  ],
+  'display': function(){};
 };
 
 work = {
   jobs: [
     {
-      'employer': '',
-      'title': '',
-      'location': '',
-      'dates': '',
-      'description': ''
+      'employer': 'State Employees\' Credit Union Insurance Services',
+      'title': 'Insurance Specialist',
+      'location': 'Raleigh, NC',
+      'dates': '2014 - present',
+      'description': 'Provide home and auto insurance solutions for SECU members.  Serviced all policies sold.  ' +
+      'Serve as back office support for over 400 agents in the SECU branch network.  Trained new agents both within ' +
+      'the department and branch network.'
     },
     {
-      'employer': '',
-      'title': '',
-      'location': '',
-      'dates': '',
-      'description': ''
+      'employer': 'North Carolina Farm Bureau Insurance Company',
+      'title': 'Insurance Agent',
+      'location': 'Chapel Hill, NC',
+      'dates': '2014',
+      'description': 'Maintained a $500,000 book of business by identifying insurance needs of existing clients and ' +
+      'offering insurance products, such as home, auto, life, and health insurance, designed to meet those needs.' +
+      ' Conducted thorough life insurance reviews with each client in order to protect their family\'s standard of ' +
+      'living in the event of their death.  Identified new clientele to offer insurance products.'
     },
     {
-      'employer': '',
-      'title': '',
-      'location': '',
-      'dates': '',
-      'description': ''
+      'employer': 'State Employees\' Credit Union',
+      'title': 'Sr. Financial Services Officer',
+      'location': 'Chapel Hill, NC',
+      'dates': '2008 - 2014',
+      'description': 'Responsible for making sound lending decisions regarding mortgages, auto loans, and various' +
+        ' personal loans.  Advised clients on retirement, investing, and taxes by analyzing their needs and taking ' +
+        'other factors into account such as risk tolerance, age, wealth, etc. in order design financial planning ' +
+        'solutions tailored to clients\'s needs'
     }
-  ]
+  ],
+  'display': function(){};
 };
 
 object = {
