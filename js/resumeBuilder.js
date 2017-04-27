@@ -113,3 +113,16 @@ formattedRole = HTMLheaderRole.replace('%data%', bio.role);
 
 $('#header').prepend(formattedRole);
 $('#header').prepend(formattedName);
+
+// Populate topContacts with info from bio.contacts
+var formattedMobile, formattedEmail, formattedGithub, formattLocation;
+
+formattedMobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
+formattedEmail = HTMLemail.replace('%data%', bio.contacts.email);
+formattedGithub = HTMLgithub.replace('%data%', bio.contacts.github);
+formattedLocation = HTMLlocation.replace('%data%', bio.contacts.location);
+
+$('#topContacts').append(formattedMobile);
+$('#topContacts').append(formattedEmail);
+$('#topContacts').append(formattedGithub);
+$('#topContacts').append(formattedLocation);
