@@ -1,7 +1,7 @@
 /*
 This is empty on purpose! Your code to build the resume will go here.
  */
-bio = {
+var bio = {
   'name': "Brandon Batten",
   'role': "Front-End Web Developer",
   'contacts': {
@@ -18,11 +18,11 @@ bio = {
     'jQuery',
     'Java'
   ],
-  'biopic': '',
-  'display': function(){};
+  'biopic': 'images/me.jpg'
+  // 'display': function(){};
 };
 
-education = {
+var education = {
   'schools': [
     {
       'name': 'Udacity',
@@ -48,11 +48,11 @@ education = {
       'dates': '2005- 2008',
       'url': 'http://www.uncw.edu/'
     }
-  ],
-  'display': function(){};
+  ]
+  // 'display': function(){};
 };
 
-work = {
+var work = {
   jobs: [
     {
       'employer': 'State Employees\' Credit Union Insurance Services',
@@ -83,18 +83,33 @@ work = {
         'other factors into account such as risk tolerance, age, wealth, etc. in order design financial planning ' +
         'solutions tailored to clients\'s needs'
     }
-  ],
-  'display': function(){};
+  ]
+  // 'display': function(){};
 };
 
-projects = {
-  [
-    'title': 'Online Portfolio',
-    'dates': '2017',
-    'description': 'Overview of projects in which I have been involved.  Displays thumbnails of each project ' +
-    'along with a brief description of the project.  Users can click on the project thumbnails to display a larger ' +
-    'modulus with expanded details of the project.  Used HTML, CSS, and Bootstrap to complete the project as part of ' +
-    'the Udacity Front-End Web Developer Nanodegree'
-  ],
-  display: functin(){}
-};
+var projects = {
+  'projects': [
+    {
+      'title': 'Online Portfolio',
+      'dates': '2017',
+      'description': 'Overview of projects in which I have been involved.  Displays thumbnails of each project ' +
+      'along with a brief description of the project.  Users can click on the project thumbnails to display a larger ' +
+      'modulus with expanded details of the project.  Used HTML, CSS, and Bootstrap to complete the project as part of ' +
+      'the Udacity Front-End Web Developer Nanodegree'
+    }
+  ]
+  // display: functin(){}
+}
+
+//=======================================================================================================================
+// Add bio information to the page
+//=======================================================================================================================
+
+// Add bio.name and bio.role
+var formattedName, formattedRole;
+
+formattedName = HTMLheaderName.replace('%data%', bio.name);
+formattedRole = HTMLheaderRole.replace('%data%', bio.role);
+
+$('#header').prepend(formattedRole);
+$('#header').prepend(formattedName);
