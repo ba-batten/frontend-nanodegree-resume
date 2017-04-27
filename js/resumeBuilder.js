@@ -9,7 +9,17 @@ bio = {
     'email': 'ba_batten@live.com',
     'github': 'ba-batten',
     'location': 'Durham, NC'
-  }
+  },
+  'welcomeMsg': '',
+  'skills': [
+    'HTML',
+    'CSS',
+    'JavaScript',
+    'jQuery',
+    'Java'
+  ],
+  'biopic': '',
+  
 };
 
 education = {
