@@ -41,8 +41,30 @@ education = {
   ]
 };
 
-object = {
-
+work = {
+  jobs: [
+    {
+      'employer': '',
+      'title': '',
+      'location': '',
+      'dates': '',
+      'description': ''
+    },
+    {
+      'employer': '',
+      'title': '',
+      'location': '',
+      'dates': '',
+      'description': ''
+    },
+    {
+      'employer': '',
+      'title': '',
+      'location': '',
+      'dates': '',
+      'description': ''
+    }
+  ]
 };
 
 object = {
