@@ -87,6 +87,14 @@ work = {
   'display': function(){};
 };
 
-object = {
-
+projects = {
+  [
+    'title': 'Online Portfolio',
+    'dates': '2017',
+    'description': 'Overview of projects in which I have been involved.  Displays thumbnails of each project ' +
+    'along with a brief description of the project.  Users can click on the project thumbnails to display a larger ' +
+    'modulus with expanded details of the project.  Used HTML, CSS, and Bootstrap to complete the project as part of ' +
+    'the Udacity Front-End Web Developer Nanodegree'
+  ],
+  display: functin(){}
 };
