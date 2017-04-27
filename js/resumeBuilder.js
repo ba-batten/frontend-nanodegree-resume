@@ -10,11 +10,35 @@ bio = {
     'github': 'ba-batten',
     'location': 'Durham, NC'
   }
-
 };
 
-object = {
-
+education = {
+  'schools': [
+    {
+      'name': 'Udacity',
+      'location': 'null',
+      'degree': 'Front-End Web Developer Nanodegree',
+      'majors': 'null',
+      'dates': '2017',
+      'url': 'https://www.udacity.com/'
+    },
+    {
+      'name': 'Wake Technical Community College',
+      'location': 'Raleigh, NC',
+      'degree': 'Associate of Science',
+      'majors': 'Programming',
+      'dates': '2015 - present',
+      'url': 'https://www.waketech.edu/'
+    },
+    {
+      'name': 'University of North Carolina Wilmington',
+      'location': 'Wilmington, NC',
+      'degree': 'Bachelor of Arts',
+      'majors': 'Communication Studies',
+      'dates': '2005- 2008',
+      'url': 'http://www.uncw.edu/'
+    }
+  ]
 };
 
 object = {
