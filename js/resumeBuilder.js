@@ -118,6 +118,16 @@ $('#header').prepend(formattedRole);
 $('#header').prepend(formattedName);
 $('#header').append(formattedWelcomeMsg);
 
+// Use a for loop to add all skills to #header
+$('#header').append(HTMLskillsStart);
+
+for (var x = 0; x < bio.skills.length; x++){
+  var formattedSkill;
+  formattedSkill = HTMLskills.replace('%data%', bio.skills[x]);
+
+  $('#skills').append(formattedSkill);
+}
+
 // Populate topContacts with info from bio.contacts
 var formattedMobile, formattedEmail, formattedGithub, formattLocation;
 
