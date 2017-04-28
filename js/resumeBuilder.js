@@ -140,3 +140,26 @@ $('#topContacts').append(formattedMobile);
 $('#topContacts').append(formattedEmail);
 $('#topContacts').append(formattedGithub);
 $('#topContacts').append(formattedLocation);
+
+//=======================================================================================================================
+// Add work information to the page
+//=======================================================================================================================
+for (var x = 0; x < work.jobs.length; x++){
+  $('#workExperience').append(HTMLworkStart);
+  var formattedJob = work.jobs[x];
+  var formattedEmployer, formattedTitle, formattedLocation, formattedDates, formattedDescription;
+
+  formattedEmployer = HTMLworkEmployer.replace('%data%', work.jobs[x].employer);
+  formattedTitle = HTMLworkTitle.replace('%data%', work.jobs[x].title);
+
+  formattedEmployerTitle = formattedEmployer + formattedTitle;
+
+  formattedLocation = HTMLworkLocation.replace('%data%', work.jobs[x].location);
+  formattedDates = HTMLworkDates.replace('%data%', work.jobs[x].dates);
+  formattedDescription = HTMLworkDescription.replace('%data%', work.jobs[x].description);
+
+  $('.work-entry').last().append(formattedEmployerTitle);
+  $('.work-entry').last().append(formattedLocation);
+  $('.work-entry').last().append(formattedDates);
+  $('.work-entry').last().append(formattedDescription);
+}
