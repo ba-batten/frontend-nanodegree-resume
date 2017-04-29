@@ -95,8 +95,13 @@ var projects = {
       'description': 'Overview of projects in which I have been involved.  Displays thumbnails of each project ' +
       'along with a brief description of the project.  Users can click on the project thumbnails to display a larger ' +
       'modulus with expanded details of the project.  Used HTML, CSS, and Bootstrap to complete the project as part of ' +
-      'the Udacity Front-End Web Developer Nanodegree'
+      'the Udacity Front-End Web Developer Nanodegree',
+      'images': [
+        'images/project1.jpg',
+        'images/project2.jpg'
+      ]
     }
+
   ]
   // display: functin(){}
 }
@@ -158,8 +163,35 @@ for (var x = 0; x < work.jobs.length; x++){
   formattedDates = HTMLworkDates.replace('%data%', work.jobs[x].dates);
   formattedDescription = HTMLworkDescription.replace('%data%', work.jobs[x].description);
 
-  $('.work-entry').last().append(formattedEmployerTitle);
-  $('.work-entry').last().append(formattedLocation);
-  $('.work-entry').last().append(formattedDates);
-  $('.work-entry').last().append(formattedDescription);
+  $('.work-entry:last').append(formattedEmployerTitle);
+  $('.work-entry:last').append(formattedLocation);
+  $('.work-entry:last').append(formattedDates);
+  $('.work-entry:last').append(formattedDescription);
+}
+
+//=======================================================================================================================
+// Add projects to the page
+//=======================================================================================================================
+for (var x = 0; x < projects.projects.length; x++){
+  $('#projects').append(HTMLprojectStart);
+
+  var formattedprojectTitle, formattedprojectDates, formattedprojectDescription, imageArray;
+
+  imageArray = projects.projects[x].images;
+
+  formattedprojectTitle = HTMLprojectTitle.replace('%data%', projects.projects[x].title);
+  formattedprojectDates = HTMLprojectDates.replace('%data%', projects.projects[x].dates);
+  formattedprojectDescription = HTMLprojectDescription.replace('%data%', projects.projects[x].description);
+
+  $('.project-entry:last').append(formattedprojectTitle);
+  $('.project-entry:last').append(formattedprojectDates);
+  $('.project-entry:last').append(formattedprojectDescription);
+
+  for (var y = 0; y < imageArray.length; y++){
+    var formattedImage;
+
+    formattedImage = HTMLprojectImage.replace('%data%', imageArray[y]);
+
+    $('.project-entry:last').append(formattedImage);
+  }
 }
