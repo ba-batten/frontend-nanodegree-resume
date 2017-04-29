@@ -103,65 +103,72 @@ var projects = {
 //=======================================================================================================================
 // Add bio information to the page
 //=======================================================================================================================
+bio.display = function(){
+  // Add bio.name and bio.role
+  var formattedName, formattedRole, formattedBioPic, formattedWelcomeMsg;
 
-// Add bio.name and bio.role
-var formattedName, formattedRole, formattedBioPic, formattedWelcomeMsg;
+  formattedName = HTMLheaderName.replace('%data%', bio.name);
+  formattedRole = HTMLheaderRole.replace('%data%', bio.role);
+  formattedBioPic = HTMLbioPic.replace('%data%', bio.biopic);
+  formattedWelcomeMsg = HTMLwelcomeMsg.replace('%data%', bio.welcomeMsg);
 
-formattedName = HTMLheaderName.replace('%data%', bio.name);
-formattedRole = HTMLheaderRole.replace('%data%', bio.role);
-formattedBioPic = HTMLbioPic.replace('%data%', bio.biopic);
-formattedWelcomeMsg = HTMLwelcomeMsg.replace('%data%', bio.welcomeMsg);
+  $('#header').prepend(formattedBioPic);
+  $('#header').prepend(formattedRole);
+  $('#header').prepend(formattedName);
+  $('#header').append(formattedWelcomeMsg);
 
-$('#header').prepend(formattedBioPic);
-$('#header').prepend(formattedRole);
-$('#header').prepend(formattedName);
-$('#header').append(formattedWelcomeMsg);
+  // Use a for loop to add all skills to #header
+  $('#header').append(HTMLskillsStart);
 
-// Use a for loop to add all skills to #header
-$('#header').append(HTMLskillsStart);
+  for (var x = 0; x < bio.skills.length; x++){
+    var formattedSkill;
+    formattedSkill = HTMLskills.replace('%data%', bio.skills[x]);
 
-for (var x = 0; x < bio.skills.length; x++){
-  var formattedSkill;
-  formattedSkill = HTMLskills.replace('%data%', bio.skills[x]);
+    $('#skills').append(formattedSkill);
+  }
 
-  $('#skills').append(formattedSkill);
+  // Populate topContacts with info from bio.contacts
+  var formattedMobile, formattedEmail, formattedGithub, formattLocation;
+
+  formattedMobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
+  formattedEmail = HTMLemail.replace('%data%', bio.contacts.email);
+  formattedGithub = HTMLgithub.replace('%data%', bio.contacts.github);
+  formattedLocation = HTMLlocation.replace('%data%', bio.contacts.location);
+
+  $('#topContacts').append(formattedMobile);
+  $('#topContacts').append(formattedEmail);
+  $('#topContacts').append(formattedGithub);
+  $('#topContacts').append(formattedLocation);
 }
 
-// Populate topContacts with info from bio.contacts
-var formattedMobile, formattedEmail, formattedGithub, formattLocation;
-
-formattedMobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
-formattedEmail = HTMLemail.replace('%data%', bio.contacts.email);
-formattedGithub = HTMLgithub.replace('%data%', bio.contacts.github);
-formattedLocation = HTMLlocation.replace('%data%', bio.contacts.location);
-
-$('#topContacts').append(formattedMobile);
-$('#topContacts').append(formattedEmail);
-$('#topContacts').append(formattedGithub);
-$('#topContacts').append(formattedLocation);
+bio.display();
 
 //=======================================================================================================================
 // Add work information to the page
 //=======================================================================================================================
-for (var x = 0; x < work.jobs.length; x++){
-  $('#workExperience').append(HTMLworkStart);
-  var formattedJob = work.jobs[x];
-  var formattedEmployer, formattedTitle, formattedLocation, formattedDates, formattedDescription;
+work.display = function(){
+  for (var x = 0; x < work.jobs.length; x++){
+    $('#workExperience').append(HTMLworkStart);
+    var formattedJob = work.jobs[x];
+    var formattedEmployer, formattedTitle, formattedLocation, formattedDates, formattedDescription;
 
-  formattedEmployer = HTMLworkEmployer.replace('%data%', work.jobs[x].employer);
-  formattedTitle = HTMLworkTitle.replace('%data%', work.jobs[x].title);
+    formattedEmployer = HTMLworkEmployer.replace('%data%', work.jobs[x].employer);
+    formattedTitle = HTMLworkTitle.replace('%data%', work.jobs[x].title);
 
-  formattedEmployerTitle = formattedEmployer + formattedTitle;
+    formattedEmployerTitle = formattedEmployer + formattedTitle;
 
-  formattedLocation = HTMLworkLocation.replace('%data%', work.jobs[x].location);
-  formattedDates = HTMLworkDates.replace('%data%', work.jobs[x].dates);
-  formattedDescription = HTMLworkDescription.replace('%data%', work.jobs[x].description);
+    formattedLocation = HTMLworkLocation.replace('%data%', work.jobs[x].location);
+    formattedDates = HTMLworkDates.replace('%data%', work.jobs[x].dates);
+    formattedDescription = HTMLworkDescription.replace('%data%', work.jobs[x].description);
 
-  $('.work-entry:last').append(formattedEmployerTitle);
-  $('.work-entry:last').append(formattedLocation);
-  $('.work-entry:last').append(formattedDates);
-  $('.work-entry:last').append(formattedDescription);
+    $('.work-entry:last').append(formattedEmployerTitle);
+    $('.work-entry:last').append(formattedLocation);
+    $('.work-entry:last').append(formattedDates);
+    $('.work-entry:last').append(formattedDescription);
+  }
 }
+
+work.display();
 
 //=======================================================================================================================
 // Add projects to the page
