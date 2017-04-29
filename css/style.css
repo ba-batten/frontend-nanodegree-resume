@@ -173,6 +173,11 @@ span {
 
 .project-entry img {
   max-width: 25%;
+  padding-left: 0;
+}
+
+.project-entry h3 {
+  padding: 10px 0;
 }
 
 #lets-connect {

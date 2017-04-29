@@ -19,37 +19,33 @@ var bio = {
     'Java'
   ],
   'biopic': 'images/me.jpg'
-  // 'display': function(){};
 };
 
 var education = {
   'schools': [
     {
-      'name': 'Udacity',
-      'location': 'null',
-      'degree': 'Front-End Web Developer Nanodegree',
-      'majors': 'null',
-      'dates': '2017',
-      'url': 'https://www.udacity.com/'
-    },
-    {
       'name': 'Wake Technical Community College',
       'location': 'Raleigh, NC',
       'degree': 'Associate of Science',
       'majors': 'Programming',
-      'dates': '2015 - present',
-      'url': 'https://www.waketech.edu/'
+      'dates': '2015 - present'
     },
     {
       'name': 'University of North Carolina Wilmington',
       'location': 'Wilmington, NC',
       'degree': 'Bachelor of Arts',
       'majors': 'Communication Studies',
-      'dates': '2005- 2008',
-      'url': 'http://www.uncw.edu/'
+      'dates': '2005- 2008'
+    }
+  ],
+  'onlineCourses': [
+    {
+      'title': 'Front-End Web Developer Nanodegree',
+      'school': 'Udacity',
+      'dates': '2017',
+      'url': 'www.udacity.com'
     }
   ]
-  // 'display': function(){};
 };
 
 var work = {
@@ -84,7 +80,6 @@ var work = {
         'solutions tailored to clients\'s needs'
     }
   ]
-  // 'display': function(){};
 };
 
 var projects = {
@@ -103,7 +98,6 @@ var projects = {
     }
 
   ]
-  // display: functin(){}
 }
 
 //=======================================================================================================================
@@ -172,26 +166,81 @@ for (var x = 0; x < work.jobs.length; x++){
 //=======================================================================================================================
 // Add projects to the page
 //=======================================================================================================================
-for (var x = 0; x < projects.projects.length; x++){
-  $('#projects').append(HTMLprojectStart);
+projects.display = function(){
+  for (var x = 0; x < projects.projects.length; x++){
+    $('#projects').append(HTMLprojectStart);
 
-  var formattedprojectTitle, formattedprojectDates, formattedprojectDescription, imageArray;
+    var formattedprojectTitle, formattedprojectDates, formattedprojectDescription, imageArray;
 
-  imageArray = projects.projects[x].images;
+    imageArray = projects.projects[x].images;
 
-  formattedprojectTitle = HTMLprojectTitle.replace('%data%', projects.projects[x].title);
-  formattedprojectDates = HTMLprojectDates.replace('%data%', projects.projects[x].dates);
-  formattedprojectDescription = HTMLprojectDescription.replace('%data%', projects.projects[x].description);
+    formattedprojectTitle = HTMLprojectTitle.replace('%data%', projects.projects[x].title);
+    formattedprojectDates = HTMLprojectDates.replace('%data%', projects.projects[x].dates);
+    formattedprojectDescription = HTMLprojectDescription.replace('%data%', projects.projects[x].description);
 
-  $('.project-entry:last').append(formattedprojectTitle);
-  $('.project-entry:last').append(formattedprojectDates);
-  $('.project-entry:last').append(formattedprojectDescription);
+    $('.project-entry:last').append(formattedprojectTitle);
+    $('.project-entry:last').append(formattedprojectDates);
+    $('.project-entry:last').append(formattedprojectDescription);
 
-  for (var y = 0; y < imageArray.length; y++){
-    var formattedImage;
+    for (var y = 0; y < imageArray.length; y++){
+      var formattedImage;
 
-    formattedImage = HTMLprojectImage.replace('%data%', imageArray[y]);
+      formattedImage = HTMLprojectImage.replace('%data%', imageArray[y]);
 
-    $('.project-entry:last').append(formattedImage);
+      $('.project-entry:last').append(formattedImage);
+    }
   }
 }
+
+projects.display();
+
+
+//=======================================================================================================================
+// Add education to page
+//=======================================================================================================================
+education.display = function(){
+  // add schools
+  for (var x = 0; x < education.schools.length; x++){
+    $('#education').append(HTMLschoolStart);
+
+    var school, formattedName, formattedLocation, formattedDegree, formattedMajors, formattedDates;
+
+    school = education.schools[x];
+    formattedName = HTMLschoolName.replace('%data%', school.name);
+    formattedDegree = HTMLschoolDegree.replace('%data%', school.degree);
+
+    formattedNameDegree = formattedName + formattedDegree
+
+    formattedLocation = HTMLschoolLocation.replace('%data%', school.location);
+    formattedMajors = HTMLschoolMajor.replace('%data%', school.majors);
+    formattedDates = HTMLschoolDates.replace('%data%', school.dates);
+
+    $('.education-entry:last').append(formattedNameDegree);
+    $('.education-entry:last').append(formattedDates);
+    $('.education-entry:last').append(formattedLocation);
+    $('.education-entry:last').append(formattedMajors);
+  }
+
+  // add online Classes
+  $('.education-entry:last').append(HTMLonlineClasses);
+
+  for (var x = 0; x < education.onlineCourses.length; x++){
+    var formattedTitle, formattedSchool, formattedDates, formattedURL, school;
+
+    school = education.onlineCourses[x];
+
+    formattedTitle = HTMLonlineTitle.replace('%data%', school.title);
+    formattedSchool = HTMLonlineSchool.replace('%data%', school.school);
+
+    formattedTitleSchool = formattedTitle + formattedSchool;
+
+    formattedDates = HTMLonlineDates.replace('%data%', school.dates);
+    formattedURL = HTMLonlineURL.replace('%data%', school.url);
+
+    $('.education-entry:last').append(formattedTitleSchool);
+    $('.education-entry:last').append(formattedDates);
+    $('.education-entry:last').append(formattedURL);
+  }
+}
+
+education.display();
