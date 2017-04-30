@@ -1,6 +1,7 @@
 /*
 This is empty on purpose! Your code to build the resume will go here.
  */
+
 var bio = {
   'name': "Brandon Batten",
   'role': "Front-End Web Developer",
@@ -10,7 +11,7 @@ var bio = {
     'github': 'ba-batten',
     'location': 'Durham, NC'
   },
-  'welcomeMsg': 'Hi, I am a front-end web developer and I would love to put my skills to work for YOU!',
+  'welcomeMessage': 'Hi, I am a front-end web developer and I would love to put my skills to work for YOU!',
   'skills': [
     'HTML',
     'CSS',
@@ -110,12 +111,12 @@ bio.display = function(){
   formattedName = HTMLheaderName.replace('%data%', bio.name);
   formattedRole = HTMLheaderRole.replace('%data%', bio.role);
   formattedBioPic = HTMLbioPic.replace('%data%', bio.biopic);
-  formattedWelcomeMsg = HTMLwelcomeMsg.replace('%data%', bio.welcomeMsg);
+  formattedWelcomeMsg = HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage);
 
   $('#header').prepend(formattedBioPic);
   $('#header').prepend(formattedRole);
   $('#header').prepend(formattedName);
-  $('#header').append(formattedWelcomeMsg);
+  $('#header').append(formattedWelcomeMessage);
 
   // Use a for loop to add all skills to #header
   $('#header').append(HTMLskillsStart);
