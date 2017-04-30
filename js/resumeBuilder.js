@@ -115,9 +115,7 @@ bio.display = function(){
   formattedBioPic = HTMLbioPic.replace(data, bio.biopic);
   formattedWelcomeMsg = HTMLwelcomeMsg.replace(data, bio.welcomeMessage);
 
-  $('#header').prepend(formattedBioPic);
-  $('#header').prepend(formattedRole);
-  $('#header').prepend(formattedName);
+  $('#header').prepend(formattedName, formattedRole, formattedBioPic);
   $('#header').append(formattedWelcomeMsg);
 
   // Use a for loop to add all skills to #header
@@ -138,10 +136,7 @@ bio.display = function(){
   formattedGithub = HTMLgithub.replace(data, bio.contacts.github);
   formattedLocation = HTMLlocation.replace(data, bio.contacts.location);
 
-  $('#topContacts').append(formattedMobile);
-  $('#topContacts').append(formattedEmail);
-  $('#topContacts').append(formattedGithub);
-  $('#topContacts').append(formattedLocation);
+  $('#topContacts').append(formattedMobile, formattedEmail, formattedGithub, formattedLocation);
 };
 
 //=======================================================================================================================
@@ -162,10 +157,7 @@ work.display = function(){
     formattedDates = HTMLworkDates.replace(data, work.jobs[x].dates);
     formattedDescription = HTMLworkDescription.replace(data, work.jobs[x].description);
 
-    $('.work-entry:last').append(formattedEmployerTitle);
-    $('.work-entry:last').append(formattedLocation);
-    $('.work-entry:last').append(formattedDates);
-    $('.work-entry:last').append(formattedDescription);
+    $('.work-entry:last').append(formattedEmployerTitle, formattedLocation, formattedDates, formattedDescription);
   }
 };
 
@@ -184,9 +176,7 @@ projects.display = function(){
     formattedprojectDates = HTMLprojectDates.replace(data, projects.projects[x].dates);
     formattedprojectDescription = HTMLprojectDescription.replace(data, projects.projects[x].description);
 
-    $('.project-entry:last').append(formattedprojectTitle);
-    $('.project-entry:last').append(formattedprojectDates);
-    $('.project-entry:last').append(formattedprojectDescription);
+    $('.project-entry:last').append(formattedprojectTitle, formattedprojectDates, formattedprojectDescription);
 
     for (var y = 0; y < imageArray.length; y++){
       var formattedImage;
@@ -218,10 +208,7 @@ education.display = function(){
     formattedMajors = HTMLschoolMajor.replace(data, school.majors.join(', '));
     formattedDates = HTMLschoolDates.replace(data, school.dates);
 
-    $('.education-entry:last').append(formattedNameDegree);
-    $('.education-entry:last').append(formattedDates);
-    $('.education-entry:last').append(formattedLocation);
-    $('.education-entry:last').append(formattedMajors);
+    $('.education-entry:last').append(formattedNameDegree, formattedDates, formattedLocation, formattedMajors);
   }
 
   // add online Classes
@@ -240,9 +227,7 @@ education.display = function(){
     formattedOnlineDates = HTMLonlineDates.replace(data, onlineSchool.dates);
     formattedOnlineURL = HTMLonlineURL.replace(data, onlineSchool.url);
 
-    $('.education-entry:last').append(formattedOnlineTitleSchool);
-    $('.education-entry:last').append(formattedOnlineDates);
-    $('.education-entry:last').append(formattedOnlineURL);
+    $('.education-entry:last').append(formattedOnlineTitleSchool, formattedOnlineDates, formattedOnlineURL);
   }
 };
 
