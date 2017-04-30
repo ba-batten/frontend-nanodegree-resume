@@ -101,6 +101,8 @@ var projects = {
   ]
 };
 
+var data = '%data%';
+
 //=======================================================================================================================
 // Add bio information to the page
 //=======================================================================================================================
@@ -108,22 +110,22 @@ bio.display = function(){
   // Add bio.name and bio.role
   var formattedName, formattedRole, formattedBioPic, formattedWelcomeMsg;
 
-  formattedName = HTMLheaderName.replace('%data%', bio.name);
-  formattedRole = HTMLheaderRole.replace('%data%', bio.role);
-  formattedBioPic = HTMLbioPic.replace('%data%', bio.biopic);
-  formattedWelcomeMsg = HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage);
+  formattedName = HTMLheaderName.replace(data, bio.name);
+  formattedRole = HTMLheaderRole.replace(data, bio.role);
+  formattedBioPic = HTMLbioPic.replace(data, bio.biopic);
+  formattedWelcomeMsg = HTMLwelcomeMsg.replace(data, bio.welcomeMessage);
 
   $('#header').prepend(formattedBioPic);
   $('#header').prepend(formattedRole);
   $('#header').prepend(formattedName);
-  $('#header').append(formattedWelcomeMessage);
+  $('#header').append(formattedWelcomeMsg);
 
   // Use a for loop to add all skills to #header
   $('#header').append(HTMLskillsStart);
 
   for (var x = 0; x < bio.skills.length; x++){
     var formattedSkill;
-    formattedSkill = HTMLskills.replace('%data%', bio.skills[x]);
+    formattedSkill = HTMLskills.replace(data, bio.skills[x]);
 
     $('#skills').append(formattedSkill);
   }
@@ -131,10 +133,10 @@ bio.display = function(){
   // Populate topContacts with info from bio.contacts
   var formattedMobile, formattedEmail, formattedGithub, formattLocation;
 
-  formattedMobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
-  formattedEmail = HTMLemail.replace('%data%', bio.contacts.email);
-  formattedGithub = HTMLgithub.replace('%data%', bio.contacts.github);
-  formattedLocation = HTMLlocation.replace('%data%', bio.contacts.location);
+  formattedMobile = HTMLmobile.replace(data, bio.contacts.mobile);
+  formattedEmail = HTMLemail.replace(data, bio.contacts.email);
+  formattedGithub = HTMLgithub.replace(data, bio.contacts.github);
+  formattedLocation = HTMLlocation.replace(data, bio.contacts.location);
 
   $('#topContacts').append(formattedMobile);
   $('#topContacts').append(formattedEmail);
@@ -151,14 +153,14 @@ work.display = function(){
     var formattedJob = work.jobs[x];
     var formattedEmployer, formattedTitle, formattedLocation, formattedDates, formattedDescription;
 
-    formattedEmployer = HTMLworkEmployer.replace('%data%', work.jobs[x].employer);
-    formattedTitle = HTMLworkTitle.replace('%data%', work.jobs[x].title);
+    formattedEmployer = HTMLworkEmployer.replace(data, work.jobs[x].employer);
+    formattedTitle = HTMLworkTitle.replace(data, work.jobs[x].title);
 
     formattedEmployerTitle = formattedEmployer + formattedTitle;
 
-    formattedLocation = HTMLworkLocation.replace('%data%', work.jobs[x].location);
-    formattedDates = HTMLworkDates.replace('%data%', work.jobs[x].dates);
-    formattedDescription = HTMLworkDescription.replace('%data%', work.jobs[x].description);
+    formattedLocation = HTMLworkLocation.replace(data, work.jobs[x].location);
+    formattedDates = HTMLworkDates.replace(data, work.jobs[x].dates);
+    formattedDescription = HTMLworkDescription.replace(data, work.jobs[x].description);
 
     $('.work-entry:last').append(formattedEmployerTitle);
     $('.work-entry:last').append(formattedLocation);
@@ -178,9 +180,9 @@ projects.display = function(){
 
     imageArray = projects.projects[x].images;
 
-    formattedprojectTitle = HTMLprojectTitle.replace('%data%', projects.projects[x].title);
-    formattedprojectDates = HTMLprojectDates.replace('%data%', projects.projects[x].dates);
-    formattedprojectDescription = HTMLprojectDescription.replace('%data%', projects.projects[x].description);
+    formattedprojectTitle = HTMLprojectTitle.replace(data, projects.projects[x].title);
+    formattedprojectDates = HTMLprojectDates.replace(data, projects.projects[x].dates);
+    formattedprojectDescription = HTMLprojectDescription.replace(data, projects.projects[x].description);
 
     $('.project-entry:last').append(formattedprojectTitle);
     $('.project-entry:last').append(formattedprojectDates);
@@ -189,7 +191,7 @@ projects.display = function(){
     for (var y = 0; y < imageArray.length; y++){
       var formattedImage;
 
-      formattedImage = HTMLprojectImage.replace('%data%', imageArray[y]);
+      formattedImage = HTMLprojectImage.replace(data, imageArray[y]);
 
       $('.project-entry:last').append(formattedImage);
     }
@@ -207,14 +209,14 @@ education.display = function(){
     var school, formattedName, formattedLocation, formattedDegree, formattedMajors, formattedDates;
 
     school = education.schools[x];
-    formattedName = HTMLschoolName.replace('%data%', school.name);
-    formattedDegree = HTMLschoolDegree.replace('%data%', school.degree);
+    formattedName = HTMLschoolName.replace(data, school.name);
+    formattedDegree = HTMLschoolDegree.replace(data, school.degree);
 
     formattedNameDegree = formattedName + formattedDegree;
 
-    formattedLocation = HTMLschoolLocation.replace('%data%', school.location);
-    formattedMajors = HTMLschoolMajor.replace('%data%', school.majors);
-    formattedDates = HTMLschoolDates.replace('%data%', school.dates);
+    formattedLocation = HTMLschoolLocation.replace(data, school.location);
+    formattedMajors = HTMLschoolMajor.replace(data, school.majors.join(', '));
+    formattedDates = HTMLschoolDates.replace(data, school.dates);
 
     $('.education-entry:last').append(formattedNameDegree);
     $('.education-entry:last').append(formattedDates);
@@ -230,13 +232,13 @@ education.display = function(){
 
     onlineSchool = education.onlineCourses[a];
 
-    formattedOnlineTitle = HTMLonlineTitle.replace('%data%', onlineSchool.title);
-    formattedOnlineSchool = HTMLonlineSchool.replace('%data%', onlineSchool.school);
+    formattedOnlineTitle = HTMLonlineTitle.replace(data, onlineSchool.title);
+    formattedOnlineSchool = HTMLonlineSchool.replace(data, onlineSchool.school);
 
     formattedOnlineTitleSchool = formattedOnlineTitle + formattedOnlineSchool;
 
-    formattedOnlineDates = HTMLonlineDates.replace('%data%', onlineSchool.dates);
-    formattedOnlineURL = HTMLonlineURL.replace('%data%', onlineSchool.url);
+    formattedOnlineDates = HTMLonlineDates.replace(data, onlineSchool.dates);
+    formattedOnlineURL = HTMLonlineURL.replace(data, onlineSchool.url);
 
     $('.education-entry:last').append(formattedOnlineTitleSchool);
     $('.education-entry:last').append(formattedOnlineDates);
