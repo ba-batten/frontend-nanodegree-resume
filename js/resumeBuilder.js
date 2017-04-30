@@ -28,14 +28,14 @@ var education = {
       'name': 'Wake Technical Community College',
       'location': 'Raleigh, NC',
       'degree': 'Associate of Science',
-      'majors': 'Programming',
+      'majors': ['Programming'],
       'dates': '2015 - present'
     },
     {
       'name': 'University of North Carolina Wilmington',
       'location': 'Wilmington, NC',
       'degree': 'Bachelor of Arts',
-      'majors': 'Communication Studies',
+      'majors': ['Communication Studies'],
       'dates': '2005- 2008'
     }
   ],
