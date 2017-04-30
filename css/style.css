@@ -26,7 +26,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #02b3e4;
   line-height: 48px;
   display: inline;
 }
@@ -100,16 +100,16 @@ a {
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: #02b3e4;
   display: none;
 }
 
 .orange {
-  background-color: #f5ae23;
+  background-color: #02b3e4;
 }
 
 .orange-text {
-  color: #f5ae23;
+  color: #02b3e4;
 }
 
 .white-text {
@@ -129,7 +129,8 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #2d3c49;
+  border-bottom: #02b3e4 solid 5px;
 }
 
 .flex-box {
@@ -163,8 +164,9 @@ ul {
   display: none;
 }
 
-img {
+#header img {
   padding: 10px;
+  border-radius: 50%;
 }
 
 span {
@@ -184,6 +186,29 @@ span {
   text-align: center;
 }
 
+/*#workExperience,
+#projects,
+#education,
+#mapDiv {
+  max-width: 80%;
+  margin: 0 10%;
+  background: #f3f3f3;
+}*/
+
+#workExperience h2,
+#projects h2,
+#education h2 {
+  color: #2d3c49;
+}
+
+#lets-connect h2 {
+  color: #2d3c49;
+}
+
+#mapDiv h2 {
+  color: #2d3c49;
+}
+
 /* Media queries to handle various device widths */
 
 @media only screen and (max-width: 1024px) {
@@ -192,11 +217,13 @@ span {
   }
 }
 
+
 @media only screen and (max-width:900px) {
   .biopic {
     width: 175px;
   }
 }
+
 
 @media only screen and (max-width: 750px) {
   #lets-connect {
